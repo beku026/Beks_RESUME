@@ -1,5 +1,3 @@
-import { setLocalStore } from "./LocalStore";
-
 const themeList: string[] = [
   'background',
   'text',
@@ -10,7 +8,7 @@ const themeList: string[] = [
 ]
 
 export const Theme = (arg: string) => {
-  setLocalStore('theme', arg)
+  localStorage.setItem('theme', arg)
   const root = document.querySelector(':root') as HTMLElement;
   themeList.map(color => {
     root.style.setProperty(`--${color}`, `var(--${arg}-${color})`);

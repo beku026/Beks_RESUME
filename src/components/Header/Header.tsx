@@ -1,16 +1,14 @@
 'use client'
 import Image from 'next/image'
 import { ChangeEvent, useEffect, useState } from 'react'
-import { getLocalStore } from '../../shared/LocalStore'
 import { Theme } from '../../shared/Theme'
 import MainDrawer, { navigation } from '../Draiwer/Drawer'
 import ParticlesContainer from '../particles'
-import BurgerBtn from '../UI/BurgerBtn/BurgerBtn'
 import s from './Header.module.scss'
 
 const Header = () => {
-  const [ themeMode, setThemeMode ] = useState<string>(getLocalStore('theme'))
-  const [isMode , setIsMode] = useState<boolean>(getLocalStore('theme') == "light" ? true : false)
+  const [ themeMode, setThemeMode ] = useState<string>(localStorage.getItem('theme') || "light")
+  const [isMode , setIsMode] = useState<boolean>(localStorage.getItem('theme') == "light" ? true : false)
   const [color, setColor] = useState('')
 
   const handleChangeMode = ({target}: ChangeEvent<HTMLInputElement>) => {
