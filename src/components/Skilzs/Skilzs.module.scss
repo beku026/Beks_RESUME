@@ -1,0 +1,44 @@
+.skilz {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 100px;
+  h2 {
+    margin-bottom: 25px;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    backdrop-filter: blur(3px);
+
+    .card{
+      text-align: center;
+       h3 {
+        margin-top: 25px;
+        font-weight: 400;
+       }
+    }
+  }
+  @media screen and (max-width: 700px) {
+    .cards {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      .card {
+        img {
+          width: 50%;
+          // height: max-content;
+        }
+        h3 {
+          margin-top: 0px;
+         }
+      }
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .cards {
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    }
+  }
+}

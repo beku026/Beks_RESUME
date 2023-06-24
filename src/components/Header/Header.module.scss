@@ -1,0 +1,120 @@
+.header {
+  padding: 15px 30px;
+  position: fixed;
+  width: 100%; 
+  top: 0;
+  background-color: var(--blur);
+  backdrop-filter: blur(10px);
+  box-shadow: 1px -10px 27px;
+  z-index: 999;
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    gap: 50px;
+    .logo {
+      padding: 5px;
+      border-radius: 5px;
+      background: var(--primary);
+      font-weight: bold;
+      color: var(--btn-color);
+      transition: all .3s linear;
+    }
+
+    .header_rigth {
+      display: flex;
+      align-items: center;
+      column-gap: 50px;
+      .nav_list {
+        width: 400px;
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        line-height: 25px;
+
+        li {
+          color: var(--text);
+          cursor: pointer;
+          height: 30px;
+          vertical-align: center;
+        
+          &::before, 
+          &::after {
+            content: '';
+            display: block;
+            background: var(--primary);
+            height: 3px;            
+            width: 0;
+            opacity: 0;
+            transition: all .5s ease;
+            transition-delay: .2s;
+            transition-timing-function: ease-in-out;
+            transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          } 
+          &::after {
+            float: right;
+          }
+          &:hover {
+            &::before, 
+            &::after {
+              opacity: 1;
+              width: 100%;
+              transition: all .5s ease;
+            }
+        
+          }
+          a {
+            text-decoration: none;
+          }
+        }
+        
+      }
+
+      .switch {
+        display: block;
+        background: var(--primary);
+        width: 60px;
+        height: 30px;
+        border-radius: 40px;
+        display: flex;
+        align-items: center;
+        padding: 0 5px;
+        position: relative;
+        transition: all .3s ease;
+  
+        &::after {
+          content: " ";
+          display: block;
+          background: var(--background);
+          transition: all .3s linear;
+          height: 22px;
+          width: 22px;
+          border-radius: 50%;
+          z-index: 1;
+        }
+        .moon, .sun {
+          position: absolute;
+          pointer-events: none;
+        }
+        .moon {
+          right: 5px;
+        }
+      }
+      .checkbox:checked ~ .switch::after {
+        margin-left: 50%;
+        transition: all .3s ease;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .nav {
+    display: none;
+  }
+  .switch {
+    margin-right: 60px;
+  }
+}

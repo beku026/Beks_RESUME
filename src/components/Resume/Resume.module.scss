@@ -1,0 +1,36 @@
+.resume {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-bottom: 100px;
+  .resume_img {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    img:first-child {
+      justify-self: end;
+    }
+    img {
+      max-width: 500px;
+      width: 100%;
+      height: max-content;
+    }
+  }
+  .resume_btns {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    .btn {
+      background: var(--primary);
+      color: var(--btn-color);
+      border: none;
+      border-radius: 12px;
+      padding: 13px 20px;
+      margin-top: 40px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+}

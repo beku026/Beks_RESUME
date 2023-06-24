@@ -1,0 +1,12 @@
+.item {
+  border-radius: 12px;
+  margin-bottom: 7px;
+  .route {
+    text-decoration: none;
+    border-radius: 5px;
+    width: 200px;
+    flex: 1;
+    color: var(--background);
+    padding: 4px 10px;
+  }
+}

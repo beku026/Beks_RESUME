@@ -1,0 +1,32 @@
+.about_me {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  .about_me_content {
+    padding-left: 25px;
+    position: relative;
+    backdrop-filter: blur(3px);
+    .heading {
+      margin-bottom: 25px;
+    }
+    .text {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 2px;
+      margin-bottom: 7px;
+    }
+    &::before {
+      content: " ";
+      width: 3px;
+      height: 100%;
+      display: block;
+      background: var(--primary);
+      position: absolute;
+      left: 0;
+      z-index: 1;
+    }
+  } 
+}
