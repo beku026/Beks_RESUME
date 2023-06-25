@@ -22,8 +22,8 @@
   --text: var(--light-text);
   --primary: var(--light-primary);
   --btn-color: var(--light-btn-color);
-  --blur: var(--light-blur)
-  --banner: var(--light-banner)
+  --blur: var(--light-blur);
+  --banner: var(--light-banner);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
@@ -53,4 +53,17 @@ body {
 }
 a {
   color: inherit
+}
+
+@media (prefers-color-scheme: dark) {
+  /* Здесь определите цвета для темной темы */
+  :root {
+    --box-shadow:  0px 10px 20px rgba(0, 0, 0, 0.3);
+    --background: var(--darck-background);
+    --text: var(--darck-text);
+    --primary: var(--darck-primary);
+    --btn-color: var(--darck-btn-color);
+    --blur: var(--darck-blur);
+    --banner: var(--darck-banner);
+  }
 }
